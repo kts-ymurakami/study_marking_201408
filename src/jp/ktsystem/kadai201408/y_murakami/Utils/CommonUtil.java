@@ -16,10 +16,9 @@ public class CommonUtil {
 	 * @return　スコア　1～26
 	 * @throws KadaiException
 	 */
-	public static int GetScoreByAlphabet(String alphabet) throws KadaiException {
+	public static int GetScoreByAlphabet(char alphabet) throws KadaiException {
 
-		// TODO Stringは文字"列"なので1文字(char)を点に変換するメソッドであるべき。
-		char c = alphabet.charAt(0);
+		char c = alphabet;
 		if (c < 'A' || c > 'Z') {
 			throw new KadaiException(ErrorCode.SYSTEM_EEROR);
 		}

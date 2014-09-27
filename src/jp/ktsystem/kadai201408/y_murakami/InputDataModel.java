@@ -60,7 +60,7 @@ public class InputDataModel {
 			dataStr = dataStr.toUpperCase();// 大文字に変換
 			char[] charArray = this.dataStr.toCharArray();
 			for (char charData : charArray) {
-				score += CommonUtil.GetScoreByAlphabet(String.valueOf(charData));
+				score += CommonUtil.GetScoreByAlphabet(charData);
 			}
 		}
 
