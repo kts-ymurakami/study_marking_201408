@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import jp.ktsystem.kadai201408.y_murakami.KadaiException;
-import jp.ktsystem.kadai201408.y_murakami.Common.AlphabetScore;
 import jp.ktsystem.kadai201408.y_murakami.Common.ErrorCode;
 
 public class CommonUtil {
@@ -19,21 +18,13 @@ public class CommonUtil {
 	 */
 	public static int GetScoreByAlphabet(String alphabet) throws KadaiException {
 
-		int score = 0;
-		AlphabetScore scoreEnum = null;
-
-		try {
-			scoreEnum = AlphabetScore.valueOf(alphabet);
-		} catch (Exception ex) {
+		// TODO Stringは文字"列"なので1文字(char)を点に変換するメソッドであるべき。
+		char c = alphabet.charAt(0);
+		if (c < 'A' || c > 'Z') {
 			throw new KadaiException(ErrorCode.SYSTEM_EEROR);
 		}
 
-		if(null != scoreEnum){
-			score = scoreEnum.GetScore();
-		}
-
-		return score;
-
+		return c - 'A' + 1;
 	}
 
 	/**
