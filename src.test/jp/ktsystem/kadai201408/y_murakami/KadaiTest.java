@@ -20,7 +20,7 @@ public class KadaiTest {
 	private void executeValidTestLv1(String inputPath, int count) {
 
 		try {
-			Kadai.calcScoreSum(INPUT_DIR_PATH + inputPath);
+			assertEquals(count, Kadai.calcScoreSum(INPUT_DIR_PATH + inputPath));
 		} catch (KadaiException ex) {
 			fail(String.valueOf(ex.getErrorCode()));
 		} catch (Exception ex) {
